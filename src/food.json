@@ -1,0 +1,39 @@
+[
+  { "id": 1,  "name": "Waffle Nachos",            "img": "Waffle",    "price": { "USD": 3.26, "NOK": 17.43 } },
+  { "id": 2,  "name": "Fluffy Pancakes",          "img": "Fluffy",  "price": { "USD": 9.44, "NOK": 15.82 } },
+  { "id": 3,  "name": "Yogurt Fruit Bowl",        "img": "Yogurt",   "price": { "USD": 5.20, "NOK": 16.66 } },
+  { "id": 4,  "name": "Roasted Potato Hash",      "img": "Roasted",    "price": { "USD": 0.95, "NOK": 62.33 } },
+  
+  { "id": 5,  "name": "Buffalo Chicken Wrap",     "img": "BuffaloChicken",     "price": { "USD": 1.04, "NOK": 62.50 } },
+  { "id": 6,  "name": "Blackened Prawn Bowl",     "img": "Blackened",     "price": { "USD": 4.82, "NOK": 72.74 } },
+  { "id": 7,  "name": "Panera Thai Chicken",      "img": "Panera",       "price": { "USD": 7.53, "NOK": 99.43 } },
+  
+  { "id": 8,  "name": "One-Pot Taco Spaghetti",   "img": "Spaghetti",     "price": { "USD": 4.94, "NOK": 88.29 } },
+  { "id": 9, "name": "Shredded Mexican Chicken",  "img": "Shredded",      "price": { "USD": 6.45, "NOK": 69.53 } },
+  { "id": 10, "name": "Creamy Steak Fettuccine",  "img": "Creamy",     "price": { "USD": 9.95, "NOK": 96.53 } },
+
+  { "id": 11, "name": "Cafe",                     "img": "Cafe",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 12, "name": "Milk",                     "img": "Milk",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 13, "name": "Soda",                     "img": "Soda",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 14, "name": "Water",                    "img": "Water",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  
+  { "id": 15, "name": "Maki",                     "img": "Maki",       "price": { "USD": 2.61, "NOK": 65.74 } },
+  { "id": 16, "name": "Oshizushi",                "img": "Oshizushi",  "price": { "USD": 1.62, "NOK": 35.22 } },
+  { "id": 17, "name": "Inarizushi",               "img": "Inarizushi",      "price": { "USD": 8.32, "NOK": 83.08 } },
+  
+  { "id": 18, "name": "Cheese Burger",            "img": "CheeseBurger", "price": { "USD": 5.08, "NOK": 89.69 } },
+  { "id": 19, "name": "Turkey Burger",            "img": "Turkey",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 20, "name": "Juicy Lucy",               "img": "Juicy",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 21, "name": "Big Mac Burger",           "img": "BigMac",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  
+  { "id": 22, "name": "NewYork Pizza",            "img": "NewYork",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 23, "name": "Greek Pizza",              "img": "Greek",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 24, "name": "Buffalo Pizza",            "img": "BuffaloPizza",    "price": { "USD": 3.69, "NOK": 26.68 } },
+
+  { "id": 25, "name": "Chocolate Chip Cookies",   "img": "Chocolate",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 26, "name": "Eggless Pineapple Pastry", "img": "Eggless",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 27, "name": "Croissants",               "img": "Croissants",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 28, "name": "Muffin",                   "img": "Muffin",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 29, "name": "Macron",                   "img": "Macron",    "price": { "USD": 3.69, "NOK": 26.68 } },
+  { "id": 30, "name": "Classic Cake Donut",       "img": "Classic",    "price": { "USD": 3.69, "NOK": 26.68 } }
+]

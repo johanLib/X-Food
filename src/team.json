@@ -1,0 +1,10 @@
+[
+    {"empno": 1, "name": "Anass Seghir",   "job": "CEO, Founder", "mgr": 1, "empPath": "Hannibal"},
+    {"empno": 2, "name": "Gordon Ramsay",  "job": "CO-Founder", "mgr": 1, "empPath": "Gordon"},
+    {"empno": 3, "name": "James Doe",      "job": "Master Chef", "mgr": 1, "empPath": "James"},
+    {"empno": 4, "name": "Mohammed Rabii", "job": "Master Chef", "mgr": 1, "empPath": "Mohammed"},
+    {"empno": 5, "name": "Said Hamza",     "job": "Master Chef", "mgr": 2, "empPath": "Said"},
+    {"empno": 6, "name": "William Tenson", "job": "Master Chef", "mgr": 2, "empPath": "William"},
+    {"empno": 7, "name": "Rick Johnson",   "job": "Master Chef", "mgr": 1, "empPath": "Rick"},
+    {"empno": 8, "name": "Adam Phillips",  "job": "Master Chef", "mgr": 2, "empPath": "Adam"}
+]

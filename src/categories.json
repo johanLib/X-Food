@@ -1,0 +1,10 @@
+[
+    { "id": 1, "img": "breakfast", "title": "breakfast", "categories": 4},
+    { "id": 2, "img": "Lunch", "title": "Lunch", "categories": 4},
+    { "id": 3, "img": "Dinner", "title": "Dinner", "categories": 3},
+    { "id": 4, "img": "Beverages", "title": "Beverages", "categories": 4},
+    { "id": 5, "img": "Sushi", "title": "Sushi", "categories": 3},
+    { "id": 6, "img": "Burger", "title": "Burger", "categories": 4},
+    { "id": 7, "img": "Pizza", "title": "Pizza", "categories": 3},
+    { "id": 8, "img": "Pastries", "title": "Pastries", "categories": 5}
+]
