@@ -9,8 +9,8 @@
 
   [![X-Food](https://img.shields.io/badge/XFood-name-orange.svg)](https://github.com/johanLib/johanLib.github.io)
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/johanLib/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/johanLib/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/pulls)
+  [![GitHub Issues](https://img.shields.io/github/issues/johanLib/X-Food.svg)](https://github.com/johanLib/johanLib.github.io/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/johanLib/X-Food.svg)](https://github.com/johanLib/johanLib.github.io/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
   [![Go live](https://img.shields.io/badge/Go%20live-008000)](https://xfood-nu.vercel.app/)
 
