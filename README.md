@@ -26,7 +26,7 @@
 - [External Links](#links)
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
+- [Features](#features)
 - [Built Using](#built_using)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
@@ -70,7 +70,7 @@ Visit http://localhost:<"port"> to experience the delectable world of X-Food.
 
 Elevate your culinary journey with X-Food, where technology meets taste!
 
-## 🎈 Usage <a name="usage"></a>
+## 🎈 Features <a name="features"></a>
 
 Exploring the Menu:
 Delve into a diverse menu featuring an array of culinary delights, from savory burgers to mouthwatering pizzas and delectable pastries. Navigate through categories like beverages, pastries, and breakfast, each offering a unique selection.
