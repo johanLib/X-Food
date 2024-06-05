@@ -7,10 +7,10 @@
 
 <div align="center">
 
-  [![X-Food](https://img.shields.io/badge/XFood-name-orange.svg)](https://github.com/johanLib/johanLib.github.io)
+  [![X-Food](https://img.shields.io/badge/XFood-name-orange.svg)](https://github.com/johanLib/X-Food)
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/johanLib/X-Food.svg)](https://github.com/johanLib/johanLib.github.io/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/johanLib/X-Food.svg)](https://github.com/johanLib/johanLib.github.io/pulls)
+  [![GitHub Issues](https://img.shields.io/github/issues/johanLib/X-Food.svg)](https://github.com/johanLib/X-Food/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/johanLib/X-Food.svg)](https://github.com/johanLib/X-Food/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
   [![Go live](https://img.shields.io/badge/Go%20live-008000)](https://xfood-nu.vercel.app/)
 
@@ -51,7 +51,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 To savor the exquisite flavors of X-Food, follow these swift steps to install and relish our Vite-powered app:
 ```
-git clone git@github.com:johanLib/johanLib.github.io.git
+git clone git@github.com:johanLib/X-Food.git
 ```
 
 ```
