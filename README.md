@@ -9,10 +9,10 @@
 
   [![X-Food](https://img.shields.io/badge/XFood-name-orange.svg)](https://github.com/johanLib/johanLib.github.io)
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/pulls)
+  [![GitHub Issues](https://img.shields.io/github/issues/johanLib/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/johanLib/The-Documentation-Compendium.svg)](https://github.com/johanLib/johanLib.github.io/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-  [![Go live](https://img.shields.io/badge/Go%20live-008000)](https://johanlib.github.io/)
+  [![Go live](https://img.shields.io/badge/Go%20live-008000)](https://xfood-nu.vercel.app/)
 
 </div>
 
@@ -33,7 +33,7 @@
 
 ## 🥀 Links <a name = "links"></a>
 
-Hey curious minds! 🚀 Dive into the heart of innovation with my app! 🌐✨ Whether you prefer the speed of [Netlify](https://x-food.netlify.app), the reliability of [Vercel](https://x-food-navy.vercel.app/), or the classic touch of [GitHub Pages](https://johanlib.github.io/), you're in for a tech-tastic ride. Explore the digital landscape where creativity meets functionality. Click away and unravel the possibilities! 🖱️💻
+Hey curious minds! 🚀 Dive into the heart of innovation with my app! 🌐✨click on this link [Vercel](https://x-food-navy.vercel.app/) and you're in for a tech-tastic ride. Explore the digital landscape where creativity meets functionality. Click away and unravel the possibilities! 🖱️💻
 ## 🧐 About <a name = "about"></a>
 In the realm of gastronomic delights, our food web application stands as a haven, catering to the diverse palates of our esteemed clientele. Within this culinary sanctuary, patrons are not merely served food but are treated to a gastronomic symphony featuring an array of delectable offerings. A dedicated section for customer ratings, providing a platform for feedback that shapes and refines our services.
 
@@ -86,6 +86,9 @@ know our customer culinary experience by exploring the ratings and feedback sect
 
 Meet Our Team:
 Get to know the culinary maestros behind the scenes. Explore our team page, where each member's role is illuminated, bringing a personal touch to your X-Food experience.
+
+Responsive Design:
+Our application boasts a highly responsive design, ensuring optimal user experience across a variety of devices and screen sizes.
 
 Switch to Dark Mode:
 Enhance your visual experience by toggling between light and dark modes. Tailor your ambiance to suit your mood while navigating the culinary wonders of X-Food.
