@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg" href="/favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X-food</title>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X-food</title>
 
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <!-- Preload key resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Poppins:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="image" href="src/assets/images/logo.webp">
+  <link rel="preload" as="image" href="src/assets/images/hero/lg-hero.webp">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- Fallback styles for preloaded fonts -->
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  </noscript>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="content-security-policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
+    font-src 'self' https://fonts.gstatic.com https://unpkg.com;
+    connect-src 'self';
+    img-src 'self';
+    frame-src 'self' https://www.google.com;
+    object-src 'none'
+  ">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Anass Seghir">
+  <meta name="keywords" content="HTML, CSS, JavaScript, VueJs, X-Food, Anass Seghir, SEO, Accessibility, Best Practises, Front End Development, Food, Ecommerce, Ecommerce app">
+  <meta name="description" content="An innovative food web application built with Vue.js and Vite. Explore a diverse menu, and enjoy seamless navigation in this fast, modern, and visually appealing e-commerce platform. Bon appétit!">
+  <meta name="robots" content="index, follow">
+
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js" defer></script>
+</body>
 </html>

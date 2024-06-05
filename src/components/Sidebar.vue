@@ -67,14 +67,28 @@
 <style scoped>
 .cart-container {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 1%;
+    right: 1%;
     width: 40%;
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     z-index: 1000;
     border-radius: 0.8rem;
     border: 1px solid #ddd;
+  }
+
+  @media screen and (max-width: 650px) {
+    .cart-container {
+      right: 10px;
+      left: 10px;
+      width: 97%;
+    }
+  }
+
+  @media screen and (max-width: 910px) and (min-width: 650px) {
+    .cart-container {
+        width: 60%;
+    }
   }
 .cart {
   background-color: var(--bgcart-color);

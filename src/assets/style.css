@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    font-display: swap;
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
@@ -28,6 +29,16 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+.sr-only {
+    position: absolute;
+    width: 0.063rem;
+    height: 0.063rem;
+    padding: 0;
+    clip: rect(0,0,0,0);
+    margin: -0.063rem;
+    white-space: nowrap;
+    border: 0;
+}
 header {
     position: fixed;
     top: 0;
@@ -42,6 +53,9 @@ header {
     box-shadow: 0 0.4rem 30rem rgba(0, 0, 0, 0.1);
     padding: 5px 3%;
     transition: all ease .52s;
+}
+.logo_home {
+    width: 100px;
 }
 .navbar {
     display: flex;
@@ -69,7 +83,7 @@ header {
     transition: all ease .50s;
 }
 .navbar li:hover::after {
-    width: 40%;
+    width: 1.7rem;
 }
 .navbar li:hover {
     color: var(--main-color);
@@ -79,6 +93,9 @@ header {
 }
 .navbar li.active::after {
     width: 1.7rem;
+}
+.navbar li a {
+    color: inherit;
 }
 .header-icons {
     display: flex;
@@ -370,20 +387,26 @@ button {
     justify-content: center;
     padding: 50px 10% 65px;
 }
-.categories-h2 {
+.categories-h2, .shop-h2 {
     margin-top: 5rem;
     text-align: center;
+    position: relative;
 }
-.categories-h2::after {
+.categories-h2::after, .shop-h2::after {
     position: absolute;
     content: '';
     height: 3px;
-    bottom: 520px;
-    width: 8%;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
     background: var(--main-color);
+}
+.categories-h2::after { 
+    width: 110px;
+}
+.shop-h2::after { 
+    width: 65px;
 }
 .category-container {
     width: 200px;
@@ -412,6 +435,8 @@ section {
 .home-img img {
     height: auto;
     width: 100%;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 .home-text h1 {
     font-size: var(--big-font);
@@ -419,6 +444,8 @@ section {
     line-height: 1.2;
     margin-bottom: 2rem;
     font-family: 'Playfair Display', serif;
+    transform: translateX(-100%);
+    animation: slideInLeft 2s ease-in-out forwards;
 }
 .home-text p {
     max-width: 370px;
@@ -426,11 +453,29 @@ section {
     line-height: 32px;
     color: var(--other-color);
     margin-bottom: 3rem;
+    transform: translateX(-100%);
+    animation: slideInLeft 2s ease-in-out forwards;
 }
 .home-btnn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 .btn {
     display: inline-block;
@@ -492,6 +537,9 @@ section {
     text-align: center;
     margin-top: 1rem;
 }
+.categories-content.in-view .box-img img {
+    opacity: 1;
+}
 .box {
     padding: 50px;
     display: flex;
@@ -509,6 +557,8 @@ section {
     height: 100%;
     object-fit: contain;
     border-radius: 0.8rem;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 .box h3 {
     margin: 15px 0;
@@ -526,15 +576,26 @@ section {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+    overflow: hidden;
 }
 .history-img img {
     height: auto;
     width: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
-.history-text strong {
+.history-img.in-view img {
+    opacity: 1;
+}
+.history-text div {
     font-size: var(--p-font);
     font-weight: 500;
-    color: var(--main-color)
+    color: var(--main-color);
+    transform: translateX(200px);
+    transition: transform 2s ease-in-out;
+}
+.history-text.in-view div {
+    transform: translateX(0);
 }
 .history-text h2 {
     font-size: var(--h2-font);
@@ -542,6 +603,11 @@ section {
     line-height: 1.2;
     margin: 30px 0;
     font-family: 'Playfair Display', serif;
+    transform: translateX(260px);
+    transition: transform 2s ease-in-out;
+}
+.history-text.in-view h2 {
+    transform: translateX(0);
 }
 .history-text p {
     max-width: 450px;
@@ -549,6 +615,18 @@ section {
     line-height: 32px;
     color: var(--other-color);
     margin-bottom: 2rem;
+    transform: translateX(320px);
+    transition: transform 2s ease-in-out;
+}
+.history-text.in-view p {
+    transform: translateX(0);
+}
+.history-text a {
+    transform: translateX(400px);
+    transition: transform 2s ease-in-out;
+}
+.history-text.in-view a {
+    transform: translateX(0);
 }
 .center-text strong {
     font-size: var(--p-font);
@@ -566,6 +644,9 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     margin-top: 5rem;
 }
+.services-container.in-view .services-content img {
+    opacity: 1;
+}
 .services-content{
     text-align: center;
 }
@@ -574,6 +655,8 @@ section {
     height: 64px;
     fill: var(--main-color);
     margin-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 .services-title{
     font-size: 1rem;
@@ -592,8 +675,12 @@ section {
     align-items: center;
     text-align: center;
     margin-top: 4rem;
+    overflow: hidden;
 }
-.row {
+.menu-content.in-view .row {
+    transform: translateY(0);
+}
+.row, .row-product {
     display: flex;
     display: -webkit-flex;
     align-items: center;
@@ -603,10 +690,23 @@ section {
     border-radius: 0.7rem;
     padding: 20px 6px;
     cursor: pointer;
-    transition: all ease .50s;
-    margin: 10px; /* Add some margin between each row */
+    margin: 10px;
 }
-
+.row {
+    transition: transform ease-out 1s;
+}
+.row-product {
+    transition: transform ease-out .5s;
+}
+.row:nth-child(1) {
+    transform: translateY(300px);
+}
+.row:nth-child(2) {
+    transform: translateY(450px);
+}
+.row:nth-child(3) {
+    transform: translateY(600px);
+}
 .row-img {
     width: 100%;
     height: auto;
@@ -630,18 +730,19 @@ section {
     color: var(--text-color);
     font-size: var(--p-font);
 }
-.row h6 {
-    font-size: 15px;
-    font-weight: 800;
-    color: var(--main-color);
-    margin: 10px 0;
-}
 
-.row h5 {
+.row h3, .row-product h4 {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 900;
     margin-top: 0.6rem;
+}
+.row span, .row-product span {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--main-color);
+    margin: 10px 0;
+    display: inline-block;
 }
 
 .ratings i {
@@ -651,7 +752,20 @@ section {
 }
 
 .row:hover {
+    animation: rowSlide .5s ease forwards;
+}
+.row-product:hover {
     transform: translateX(-8px);
+}
+
+@keyframes rowSlide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-8px);
+    }
 }
 .menu-btnn {
     text-align: center;
@@ -663,21 +777,6 @@ section {
     justify-content: start;
     padding: 0 5.5% 65px;
 }
-.products h2 {
-    margin-top: 5rem;
-    text-align: center;
-}
-.products h2::after {
-    position: absolute;
-    content: '';
-    height: 3px;
-    bottom: 520px;
-    width: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-    background: var(--main-color);
-}
 .products h3 {
     margin: 1rem 0 0 2rem;
     color: var(--main-color);
@@ -686,7 +785,7 @@ section {
 .team-heading {
     text-align: center;
 }
-.team-heading h3 {
+.team-heading p {
     margin-top: 5rem;
     font-weight: 400;
     color: var(--main-color);
@@ -820,10 +919,15 @@ section {
     align-items: center;
     gap: 2rem;
 }
-.testimonial-left strong {
+.testimonial.in-view div, .testimonial.in-view h2{
+    transform: translateX(0);
+}
+.testimonial-left div {
     font-size: var(--p-font);
     font-weight: 500;
     color: var(--main-color);
+    transform: translateX(-400px);
+    transition: transform 1s ease;
 }
 .testimonial-left h2 {
     font-size: var(--h2-font);
@@ -831,6 +935,8 @@ section {
     line-height: 1.2;
     margin: 20px 0;
     font-family: 'Playfair Display', serif;
+    transform: translateX(-400px);
+    transition: transform 1.8s ease;
 }
 .testimonial-img img {
     width: 100%;
@@ -838,6 +944,11 @@ section {
     height: auto;
     margin-bottom: 15px;
     border-radius: 50%;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.testimonial.in-view .testimonial-img img {
+    opacity: 1;
 }
 .testimonial-right h4 {
     font-size: 22x;

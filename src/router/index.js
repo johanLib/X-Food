@@ -1,10 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Products from '../views/Products.vue'
-import Categories from '../views/Categories.vue'
-import OurTeam from '../views/OurTeam.vue'
-import AboutUs from '../views/AboutUs.vue'
-import ContactUs from '../views/ContactUs.vue'
 
 
 const router = createRouter({
@@ -13,32 +7,36 @@ const router = createRouter({
     {
       path: '/',
       name: 'HomeView',
-      component: Home
+      component: () => import('../views/Home.vue')
     },
     {
       path: '/Products',
       name: 'ProductsView',
-      component: Products
+      component: () => import('../views/Products.vue'),
+      props: {
+        inventory: "inventory",
+        addToCart: "addToCart"
+      }
     },
     {
       path: '/Categories',
       name: 'Categories',
-      component: Categories
+      component: () => import('../views/Categories.vue')
     },
     {
       path: '/OurTeam',
       name: 'OurTeam',
-      component: OurTeam
+      component: () => import('../views/OurTeam.vue')
     },
     {
       path: '/About',
       name: 'About',
-      component: AboutUs
+      component: () => import('../views/AboutUs.vue')
     },
     {
       path: '/ContactUs',
       name: 'ContactUs',
-      component: ContactUs
+      component: () => import('../views/ContactUs.vue')
     }
   ]
 })

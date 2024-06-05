@@ -1,0 +1,9 @@
+{
+    "theme_color": "#f24f04",
+    "background_color": "#fffefb",
+    "scope": "/",
+    "start_url": "/",
+    "name": "X-Food",
+    "short_name": "X-Food",
+    "description": "An innovative food web application built with Vue.js and Vite. Explore a diverse menu, and enjoy seamless navigation in this fast, modern, and visually appealing e-commerce platform. Bon appétit!"
+}

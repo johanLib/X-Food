@@ -1,14 +1,15 @@
 <template>
-    <section>
-        <h2>About Us</h2>
-        <main class="about">
+    <main>
+        <h1 class="sr-only">About Page</h1>
+        <h2 class="about-h2">About Us</h2>
+        <section class="about">
             <div class="about-container">
                 <div class="about-text">
                     <div class="text-block">
                         <h3>About X-Food</h3>
                         <p>Welcome to X-Food, where culinary excellence meets your doorstep. Founded in 2019 in the heart of Casablanca, Morocco, X-Food has been on a flavorful journey, bringing the world's finest cuisines directly to your table.X-Food is more than an app; it's a culinary expedition designed to delight your palate. We understand that food is not just sustenance; it's an expression of culture, passion, and joy. Every dish we deliver is crafted with care, ensuring that each bite is a moment of sheer delight.</p>
                         <p class="join-us">Embark on a gastronomic voyage with X-Food. Discover new flavors, relish familiar favorites, and let the aromas of our carefully curated menu fill your space. Welcome to X-Food – where every bite tells a story.</p>
-                        <a class="btn">View Servives</a>
+                        <a href="/#services" class="btn">View Servives</a>
                     </div>
                     <div class="text-block">
                         Savor the moments,<br/>
@@ -16,17 +17,25 @@
                     </div>
                 </div>
                 <div class="about-img">
-                    <img src="../assets/images/menu/Cafe.png" alt="">
+                    <img src="../assets/images/menu/Cafe.webp" alt="" width="400px" height="400px">
                 </div>
             </div>
-        </main>
-    </section>
+        </section>
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bxs-up-arrow scrolltop-icon'></i>
+        </a>
+        <ContactFooter/>
+    </main>
 </template>
 
 <script>
+import ContactFooter from '@/components/ContactFooter.vue'
 
 export default {
-name: 'AboutUs'
+    name: 'AboutUs',
+    components: {
+        ContactFooter
+    }
 }
 </script>
 
@@ -43,16 +52,17 @@ name: 'AboutUs'
         --h2-font: 2.5rem;
         --p-font: 1rem;
     }
-    h2 {
+    .about-h2 {
         text-align: center;
-        margin-bottom: 30px;
+        margin-top: 5rem;
+        position: relative;
     }
-    h2::after {
+    .about-h2::after {
         position: absolute;
         content: '';
         height: 3px;
-        bottom: 520px;
-        width: 5%;
+        bottom: -5px;
+        width: 110px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
@@ -64,13 +74,19 @@ name: 'AboutUs'
     }
     .about-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.2fr .7fr;
+        gap: 25px;
         justify-content: center;
         transition: all ease .50s;
     }
-    .about-text {
-        width: 700px;     
-        padding: 2.5rem 2rem 0;
+    @media screen and (max-width: 850px) {
+        .about-container {
+            grid-template-columns: 1fr;
+        }
+
+        .about-img {
+            grid-area: 1;
+        }
     }
     .about-text h3 {
         color: var(--main-color);
@@ -79,9 +95,7 @@ name: 'AboutUs'
         margin-top: 1rem;
     }
     .about-img {
-        position: relative;
-        display: inline-block;
-        padding-top: 2.5rem;
+        
     }
     .about-img img {
         width: 400px;

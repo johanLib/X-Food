@@ -1,55 +1,55 @@
 <template>
-    <div class="row">
+    <div class="row-product">
         <div class="row-img">
-            <img :src="productImage" alt="">
-            <h5>{{ product.name }}</h5>
-            <h6>$ {{ product.price.USD }}</h6>
+            <img :src="productImage" width="500px" height="500px" :alt="product.name">
+            <h4>{{ product.name }}</h4>
+            <span>$ {{ product.price.USD }}</span>
             <div class="ratings">
-                <a href="#"><i class="bx bxs-star"></i></a>
-                <a href="#"><i class="bx bxs-star"></i></a>
-                <a href="#"><i class="bx bxs-star"></i></a>
-                <a href="#"><i class="bx bxs-star"></i></a>
-                <a href="#"><i class="bx bxs-star-half"></i></a>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
             </div>
-            <input type="number" v-model.number="quantity" min="0">
+            <input type="number" v-model.number="quantity" min="0" aria-label="Quantity">
             <div class="menu-btnn" style="margin-top: 1.3rem;">
-                <a @click="addToCart(product.name, quantity)" class="btn">Add to cart</a>
+                <button @click="addToCart(product.name, quantity)" class="btn">Add to cart</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Waffle from '../assets/images/menu/Waffle-Nachos.png'
-import Fluffy from '../assets/images/menu/Fluffy-Pancakes.png'
-import Yogurt from '../assets/images/menu/Yogurt-Fruit-Bowl.png'
-import Roasted from '../assets/images/menu/Roasted-Potato-Hash.png'
-import BuffaloChicken from '../assets/images/menu/Buffalo-Chicken-Wrap.png'
-import Blackened from '../assets/images/menu/Blackened-Prawn-Bowl.png'
-import Panera from '../assets/images/menu/Panera-Thai-Chicken.png'
-import Spaghetti from '../assets/images/menu/One-Pot_Taco_Spaghetti.png'
-import Shredded from '../assets/images/menu/Shredded-Mexican-Chicken.png'
-import Creamy from '../assets/images/menu/Creamy-Steak-Fettuccine.png'
-import Cafe from '../assets/images/menu/Cafe.png'
-import Milk from '../assets/images/menu/Milk.png'
-import Soda from '../assets/images/menu/Soda.png'
-import Water from '../assets/images/menu/Water.png'
-import Maki from '../assets/images/menu/Maki.png'
-import Oshizushi from '../assets/images/menu/Oshizushi.png'
-import Inarizushi from '../assets/images/menu/Inarizushi.png'
-import CheeseBurger from '../assets/images/menu/CheeseBurger.png'
-import Turkey from '../assets/images/menu/Turkey-Burger.png'
-import Juicy from '../assets/images/menu/Juicy-Lucy.png'
-import BigMac from '../assets/images/menu/Big-Mac-Burger.png'
-import NewYork from '../assets/images/menu/NewYork-Pizza.png'
-import Greek from '../assets/images/menu/Greek-Pizza.png'
-import BuffaloPizza from '../assets/images/menu/Buffalo-Pizza.png'
-import Chocolate from '../assets/images/menu/Chocolate-Chip-Cookies.png'
-import Eggless from '../assets/images/menu/Eggless-Pineapple-Pastry.png'
-import Croissants from '../assets/images/menu/Croissants.png'
-import Muffin from '../assets/images/menu/Muffin.png'
-import Macron from '../assets/images/menu/Macron.png'
-import Classic from '../assets/images/menu/Classic-Cake-Donut.png'
+import Waffle from '../assets/images/menu/Waffle-Nachos.webp'
+import Fluffy from '../assets/images/menu/Fluffy-Pancakes.webp'
+import Yogurt from '../assets/images/menu/Yogurt-Fruit-Bowl.webp'
+import Roasted from '../assets/images/menu/Roasted-Potato-Hash.webp'
+import BuffaloChicken from '../assets/images/menu/Buffalo-Chicken-Wrap.webp'
+import Blackened from '../assets/images/menu/Blackened-Prawn-Bowl.webp'
+import Panera from '../assets/images/menu/Panera-Thai-Chicken.webp'
+import Spaghetti from '../assets/images/menu/One-Pot_Taco_Spaghetti.webp'
+import Shredded from '../assets/images/menu/Shredded-Mexican-Chicken.webp'
+import Creamy from '../assets/images/menu/Creamy-Steak-Fettuccine.webp'
+import Cafe from '../assets/images/menu/Cafe.webp'
+import Milk from '../assets/images/menu/Milk.webp'
+import Soda from '../assets/images/menu/Soda.webp'
+import Water from '../assets/images/menu/Water.webp'
+import Maki from '../assets/images/menu/Maki.webp'
+import Oshizushi from '../assets/images/menu/Oshizushi.webp'
+import Inarizushi from '../assets/images/menu/Inarizushi.webp'
+import CheeseBurger from '../assets/images/menu/CheeseBurger.webp'
+import Turkey from '../assets/images/menu/Turkey-Burger.webp'
+import Juicy from '../assets/images/menu/Juicy-Lucy.webp'
+import BigMac from '../assets/images/menu/Big-Mac-Burger.webp'
+import NewYork from '../assets/images/menu/NewYork-Pizza.webp'
+import Greek from '../assets/images/menu/Greek-Pizza.webp'
+import BuffaloPizza from '../assets/images/menu/Buffalo-Pizza.webp'
+import Chocolate from '../assets/images/menu/Chocolate-Chip-Cookies.webp'
+import Eggless from '../assets/images/menu/Eggless-Pineapple-Pastry.webp'
+import Croissants from '../assets/images/menu/Croissants.webp'
+import Muffin from '../assets/images/menu/Muffin.webp'
+import Macron from '../assets/images/menu/Macron.webp'
+import Classic from '../assets/images/menu/Classic-Cake-Donut.webp'
 
 export default {
     props: ['product', 'index', 'addToCart'],

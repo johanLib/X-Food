@@ -1,8 +1,10 @@
 <template>
-    <div class="contact-us">
+    <main>
+        <h1 class="sr-only">ContactUs Page</h1>
+        <section class="contact-us">
             <div class="contact-container">
                 <div class="contact-header">
-                    <h3>Contact Us</h3>
+                    <p>Contact Us</p>
                     <h2>Contact For Any Query</h2>
                 </div>
                 <div class="contact-information">
@@ -47,11 +49,11 @@
                             <div class="contact-text">
                                 <h3>Follow Us</h3>
                                 <div class="contact-social">
-                                    <a href=""><i class="bx bxl-facebook"></i></a>
-                                    <a href=""><i class="bx bxl-twitter"></i></a>
-                                    <a href=""><i class="bx bxl-instagram-alt"></i></a>
-                                    <a href=""><i class="bx bxl-youtube"></i></a>
-                                    <a href=""><i class="bx bxl-linkedin"></i></a>
+                                    <a href="" aria-label="facebook page"><i class="bx bxl-facebook"></i></a>
+                                    <a href="" aria-label="twitter page"><i class="bx bxl-twitter"></i></a>
+                                    <a href="" aria-label="instagram page"><i class="bx bxl-instagram-alt"></i></a>
+                                    <a href="" aria-label="youtube page"><i class="bx bxl-youtube"></i></a>
+                                    <a href="" aria-label="linkedin page"><i class="bx bxl-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -59,36 +61,59 @@
                 </div>
                 <div class="contact-form">
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1600663868074!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349864.828994271!2d-8.6007261!3d33.5898862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd529e2c67ed%3A0x400b759b4b558b0!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2sus!4v1684513135614!5m2!1sen!2sus"
+                            frameborder="0"
+                            style="border:0;"
+                            allowfullscreen=""
+                            aria-hidden="false"
+                            tabindex="0"
+                            title="Google Maps showing Casablanca, Morocco"
+                            loading="eager"
+                        ></iframe>
                     </div>
                     <div id="success">
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="sentMessage" id="contactForm" novalidate>
                             <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <label class="sr-only" for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required aria-required="true" data-validation-required-message="Please enter your name" autocomplete="name" />
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <label class="sr-only" for="email">Your Email</label>
+                                <input type="email" class="form-control" id="contact_email" name="email" placeholder="Your Email" required aria-required="true" data-validation-required-message="Please enter your email" autocomplete="email" />
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <label class="sr-only" for="subject">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required aria-required="true" data-validation-required-message="Please enter a subject" autocomplete="off" />
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <label class="sr-only" for="message">Message</label>
+                                <textarea class="form-control" id="message" name="message" placeholder="Message" required aria-required="true" data-validation-required-message="Please enter your message" autocomplete="off"></textarea>
                             </div>
                             <div>
                                 <button class="btn custom-btn" type="submit" id="sendMessageButton">Send Message</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bxs-up-arrow scrolltop-icon'></i>
+        </a>
+        <ContactFooter loading="auto"/>
+    </main>
 </template>
 
 <script>
+import ContactFooter from '@/components/ContactFooter.vue'
 
 export default {
-name: 'ContactUs'
+    name: 'ContactUs',
+    components: {
+        ContactFooter
+    }
 }
 </script>
 
@@ -113,14 +138,15 @@ name: 'ContactUs'
     padding: 45px 10% 0;
 }
 .contact-us .contact-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 .contact-us .contact-header {
     margin-top: 2.5rem;
     text-align: center;
+    grid-area: 1 / 1 / 2 / 3;
 }
-.contact-us .contact-header h3 {
+.contact-us .contact-header p {
     font-weight: 400;
     color: var(--main-color);
 }
@@ -128,14 +154,15 @@ name: 'ContactUs'
     font-size: 2rem;
 }
 .contact-us .contact-information {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
     align-items: center;
     min-height: 130px;
     margin: 1.5rem 0 30px 0;
     padding: 30px 30px 0 30px;
     background: rgba(0, 0, 0, .04);
     border-radius: 0.8rem;
+    grid-area: 2 / 1 / 3 / 3;
 }
 
 .contact-us .contact-info {
@@ -179,6 +206,7 @@ name: 'ContactUs'
     margin: 0;
     font-size: 16px;
     color: var(--contact-text-p);
+    word-wrap: break-word;
 }
 .contact-us .contact-social a {
     margin-right: 10px;
@@ -191,11 +219,28 @@ name: 'ContactUs'
     color: var(--text-color);
 }
 .contact-form {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    grid-area: 3 / 1 / 4 / 3;
+    width: 100%;
 }
 .contact-form .contact-map {
-    width: 48%;
-    margin-right: 4%;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+@media screen and (max-width: 630px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .contact-map {
+        grid-area: 1;
+    }
+
+    .contact-container .contact-form #success {
+        grid-area: 2;
+    }
 }
 .contact-us .contact-form iframe {
     width: 100%;
@@ -204,7 +249,7 @@ name: 'ContactUs'
     margin-bottom: 25px;
 }
 .contact-form #success {
-    width: 48%;
+    grid-area: 3 / 2 / 4 / 3;
 }
 .contact-us .contact-form input {
     background: var(--bb-color);
