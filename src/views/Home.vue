@@ -69,25 +69,53 @@ import HomeComponent from '@/components/HomeComponent.vue';
 import Loading from '@/loaders/Loading.vue';
 
 const CategoriesComponent = defineAsyncComponent(() =>
-  import('@/components/CategoriesComponent.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/CategoriesComponent.vue'));
+    }, 1000)
+  })
 );
 const History = defineAsyncComponent(() =>
-  import('@/components/History.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/History.vue'));
+    }, 1500)
+  })
 );
 const Services = defineAsyncComponent(() =>
-  import('@/components/Services.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/Services.vue'));
+    }, 1500)
+  })
 );
 const MenuComponent = defineAsyncComponent(() =>
-  import('@/components/MenuComponent.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/MenuComponent.vue'));
+    }, 2000)
+  })
 );
 const Testimonial = defineAsyncComponent(() =>
-  import('@/components/Testimonial.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/Testimonial.vue'));
+    }, 2200)
+  })
 );
 const Newsletter = defineAsyncComponent(() =>
-  import('@/components/Newsletter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/Newsletter.vue'));
+    }, 2200)
+  })
 );
 const ContactFooter = defineAsyncComponent(() =>
-  import('@/components/ContactFooter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 3100)
+  })
 );
 
 export default {

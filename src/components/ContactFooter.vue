@@ -51,7 +51,6 @@
 </template>
 
 <script>
-await new Promise(res => setTimeout(res, 3000))
 export default {
     name: 'ContactFooter',
     props: ['logo']

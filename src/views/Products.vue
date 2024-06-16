@@ -109,7 +109,11 @@
 import { defineAsyncComponent } from 'vue';
 import ProductCard from '@/components/ProductCard.vue'
 const ContactFooter = defineAsyncComponent(() =>
-  import('@/components/ContactFooter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 3500)
+  })
 );
 import Loading from '@/loaders/Loading.vue'
 

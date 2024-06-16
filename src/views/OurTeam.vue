@@ -31,7 +31,11 @@ import { defineAsyncComponent } from 'vue';
 import TeamDiv from '@/components/TeamDiv.vue'
 import team from '@/data/team.json'
 const ContactFooter = defineAsyncComponent(() =>
-  import('@/components/ContactFooter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 1850)
+  })
 );
 import Loading from '@/loaders/Loading.vue'
 

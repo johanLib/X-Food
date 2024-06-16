@@ -38,7 +38,11 @@
 <script>
 import { defineAsyncComponent } from 'vue';
 const ContactFooter = defineAsyncComponent(() =>
-  import('@/components/ContactFooter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 1850)
+  })
 );
 import Loading from '@/loaders/Loading.vue'
 
@@ -106,9 +110,6 @@ export default {
     }
     .about-text a {
         margin-top: 1rem;
-    }
-    .about-img {
-        
     }
     .about-img img {
         width: 400px;

@@ -116,7 +116,11 @@
 <script>
 import { defineAsyncComponent } from 'vue';
 const ContactFooter = defineAsyncComponent(() =>
-  import('@/components/ContactFooter.vue')
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 1850)
+  })
 );
 import Loading from '@/loaders/Loading.vue'
 

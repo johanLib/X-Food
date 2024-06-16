@@ -38,7 +38,6 @@
 </template>
 
 <script>
-await new Promise(res => setTimeout(res, 1500))
 export default {
     name: 'ServicesComponent'
 }

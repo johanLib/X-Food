@@ -37,7 +37,11 @@ import { defineAsyncComponent } from 'vue'
 import categories from '@/data/categories.json'
 import Loading from '@/loaders/Loading.vue'
 const ContactFooter = defineAsyncComponent({
-    loader: () => import('@/components/ContactFooter.vue'),
+    loader: () => new Promise(resolve => {
+    setTimeout(() => {
+      resolve(import('@/components/ContactFooter.vue'));
+    }, 1850);
+    }),
     loadingComponent: Loading,
     suspensible: true
 })
