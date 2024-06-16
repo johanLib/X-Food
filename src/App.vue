@@ -1,10 +1,9 @@
 <script setup>
-import { RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
 </script>
-
 <template>
-  <Heading :logo="logo" :toggleSidebar="toggleSidebar" :totalQuantity="totalQuantity"/>
-  <RouterView :inventory="isProductsPage ? inventory : null" :addToCart="isProductsPage ? addToCart : null"/>
+  <HeaderComponent :isDark="isDark" :logo="bannerlogo" :toggleLogin="toggleLogin" :toggleSearch="toggleSearch" :toggleSidebar="toggleSidebar" :totalQuantity="totalQuantity"/>
+  <RouterView :logo="bannerlogo" :inventory="isProductsPage ? inventory : null" :addToCart="isProductsPage ? addToCart : null"/>
   <transition name="cart-transition" mode="out-in">
   <Sidebar
       v-if="showSidebar"
@@ -14,30 +13,42 @@ import { RouterView } from 'vue-router'
       :remove="removeItem"
    />
   </transition>
-  <Search />
-  <Login />
+  <Search v-if="showSearch"
+          :toggle="toggleSearch"/>
+  <Login v-if="showLogin"
+         :toggle="toggleLogin"/>
 </template>
 
 <script>
-  import Heading from '@/components/Heading.vue'
-  import Sidebar from '@/components/Sidebar.vue'
-  import Search from '@/components/Search.vue'
-  import Login from '@/components/Login.vue'
-  import food from './data/food.json'
+  import { defineAsyncComponent } from 'vue'
+  import { initializeScrollTop } from '@/lib/script'
+  import food from '@/data/food.json'
   import logo from '@/assets/images/logo.webp'
-  import { initializeDarkMode, initializeMenuToggle, initializeSearch, initializeLogin } from '@/lib/script'
+  import whitelogo from '@/assets/images/logo-white.webp'
+  import HeaderSketelon from '@/loaders/HeaderSketelon.vue'
+  const HeaderComponent = defineAsyncComponent({
+    loader: () => import('@/components/HeaderComponent.vue'),
+    loadingComponent: HeaderSketelon,
+    suspensible: false
+  })
+  const Sidebar = defineAsyncComponent(() => import('@/components/Sidebar.vue'))
+  const Search = defineAsyncComponent(() => import('@/components/Search.vue'))
+  const Login = defineAsyncComponent(() => import('@/components/Login.vue'))
 
   export default {
     components: {
-      Heading,
+      HeaderComponent,
       Sidebar,
       Search,
       Login
     },
     data() {
       return {
+        showSearch: false,
+        showLogin: false,
         showSidebar: false,
         inventory: food,
+        bannerlogo: logo,
         cart: {}
       }
     },
@@ -57,15 +68,26 @@ import { RouterView } from 'vue-router'
       toggleSidebar() {
         this.showSidebar = !this.showSidebar
       },
+      toggleLogin() {
+        this.showLogin = !this.showLogin
+      },
+      toggleSearch() {
+        this.showSearch = !this.showSearch
+      },
       removeItem(name) {
         delete this.cart[name]
+      },
+      isDark(dark) {
+        if(dark) {
+          this.bannerlogo = whitelogo
+        }
+        else {
+          this.bannerlogo = logo
+        }
       }
     },
     mounted() {
-        initializeDarkMode(),
-        initializeMenuToggle(),
-        initializeSearch(),
-        initializeLogin()
+        initializeScrollTop()
     }
   }
 </script>

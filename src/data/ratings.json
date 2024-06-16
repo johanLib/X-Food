@@ -1,0 +1,51 @@
+[
+    {
+      "userimage": "src/assets/images/users/User1.webp",
+      "fullname": "Mary Johnson",
+      "location": "New York, USA",
+      "commentary": "Amazing experience! The ambiance was fantastic and the staff were very friendly. Highly recommended!"
+    },
+    {
+      "userimage": "src/assets/images/users/User2.webp",
+      "fullname": "Ahmed Mohammed",
+      "location": "Casablanca, Morocco",
+      "commentary": "The taste was excellent. The service was good, very fast response. The food was delicious, thank you so much."
+    },
+    {
+      "userimage": "src/assets/images/users/User3.webp",
+      "fullname": "Hiroshi Tanaka",
+      "location": "Tokyo, Japan",
+      "commentary": "The food quality was top-notch. Every dish was a delight. Can't wait to visit again."
+    },
+    {
+        "userimage": "src/assets/images/users/Khabib.webp",
+        "fullname": "Khabib Nurmagomedov",
+        "location": "Moscow, Russia",
+        "commentary": "The taste and quality of the food were beyond my expectations. The service was exceptional. Thank you for a great experience."
+    },
+    {
+      "userimage": "src/assets/images/users/David-Goggins.webp",
+      "fullname": "David Goggins",
+      "location": "New York, USA",
+      "commentary": "Great food and even better service! The atmosphere was very welcoming and the staff were attentive."
+    },
+    {
+      "userimage": "src/assets/images/users/Huberman.webp",
+      "fullname": "Andrew Huberman",
+      "location": "Sydney, Australia",
+      "commentary": "A delightful dining experience with a great selection of dishes. The staff were friendly and efficient."
+    },
+    {
+      "userimage": "src/assets/images/users/User4.webp",
+      "fullname": "Juan Pérez",
+      "location": "Madrid, Spain",
+      "commentary": "The food was simply amazing. The service was quick and the staff were very helpful. Highly recommended!"
+    },
+    {
+      "userimage": "src/assets/images/users/User5.webp",
+      "fullname": "Chloe Martin",
+      "location": "Paris, France",
+      "commentary": "A perfect dining experience with delicious food and excellent service. The ambiance was lovely and the staff were attentive."
+    }
+]
+  

@@ -6,7 +6,7 @@
     </heading>
     <main class="team">
         <TeamDiv 
-            v-for="(emp, index) in team.slice(0,8)"
+            v-for="(emp, index) in data.slice(0,8)"
             :key="emp.id"
             class="team-card"
             :index="index"
@@ -16,28 +16,37 @@
     <a href="#" class="scrolltop" id="scroll-top">
         <i class='bx bxs-up-arrow scrolltop-icon'></i>
     </a>
-    <ContactFooter loading="lazy"/>
+    <Suspense>
+          <template #default>
+              <ContactFooter :logo="logo"/>
+          </template>
+          <template #fallback>
+            <Loading />
+          </template>
+      </Suspense>
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
 import TeamDiv from '@/components/TeamDiv.vue'
-import ContactFooter from '@/components/ContactFooter.vue'
 import team from '@/data/team.json'
-import { initializeScrollTop } from '@/lib/script'
+const ContactFooter = defineAsyncComponent(() =>
+  import('@/components/ContactFooter.vue')
+);
+import Loading from '@/loaders/Loading.vue'
 
 export default {
     name: 'OurTeam',
+    props: ['logo'],
     components: {
         TeamDiv,
-        ContactFooter
+        ContactFooter,
+        Loading
     },
     data() {
         return {
-            team: team
+            data: team
         }
-    },
-    mounted() {
-        initializeScrollTop()
     }
 }
 </script>

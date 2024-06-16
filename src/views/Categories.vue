@@ -3,31 +3,57 @@
         <h1 class="sr-only">Categories Page</h1>
         <h2 class="categories-h2">Categories</h2>
         <section class="category">
-            <CategoryCard
-                v-for="(category, index) in data.slice(0,9)"
-                :key="category.id"
-                class="category-card"
-                :index="index"
-                :category="category"
-            />
+            <Suspense>
+                <template #default>
+                    <CategoryCard
+                    v-for="(category, index) in data.slice(0,9)"
+                    :key="category.id"
+                    class="category-card"
+                    :index="index"
+                    :category="category"
+                    />
+                </template>
+                <template #fallback>
+                    <Loading />
+                </template>
+            </Suspense>
         </section>
         <a href="#" class="scrolltop" id="scroll-top">
             <i class='bx bxs-up-arrow scrolltop-icon'></i>
         </a>
-        <ContactFooter loading="auto"/>
+        <Suspense>
+            <template #default>
+                <ContactFooter :logo="logo"/>
+            </template>
+            <template #fallback>
+                <Loading />
+            </template>
+        </Suspense>
     </main>
 </template>
 
 <script>
-import CategoryCard from '@/components/CategoryCard.vue'
-import categories from '../data/categories.json'
-import ContactFooter from '@/components/ContactFooter.vue'
+import { defineAsyncComponent } from 'vue'
+import categories from '@/data/categories.json'
+import Loading from '@/loaders/Loading.vue'
+const ContactFooter = defineAsyncComponent({
+    loader: () => import('@/components/ContactFooter.vue'),
+    loadingComponent: Loading,
+    suspensible: true
+})
+const CategoryCard = defineAsyncComponent({
+    loader: () => import('@/components/CategoryCard.vue'),
+    loadingComponent: Loading,
+    suspensible: true
+})
 
 export default {
     name: 'CategoriesView',
+    props: ['logo'],
     components: {
         CategoryCard,
-        ContactFooter
+        ContactFooter,
+        Loading
     },
     data() {
         return {

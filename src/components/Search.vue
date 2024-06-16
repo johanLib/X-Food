@@ -5,12 +5,13 @@
             <input type="search" placeholder="What are you looking for?" class="search-input">
          </form>
 
-         <i class="bx bx-x search-close" id="search-close"></i>
+         <i class="bx bx-x search-close" @click="toggle"></i>
       </div>
 </template>
 
 <script>
 export default {
-    name: 'SearchComponent'
+    name: 'SearchComponent',
+    props: ['toggle']
 }
 </script>

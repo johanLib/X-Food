@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "node-sass": "^9.0.0",
+    "react-router-hash-link": "^2.4.3",
     "sass-loader": "^14.0.0",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"

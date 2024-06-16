@@ -38,7 +38,16 @@ const router = createRouter({
       name: 'ContactUs',
       component: () => import('../views/ContactUs.vue')
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      };
+    }
+    return { left: 0, top: 0 };
+  },
 })
 
 export default router

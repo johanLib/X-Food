@@ -1,25 +1,25 @@
 <template>
   <div class="category-container">
-    <a :href="`/Products/#${category.title.toLowerCase()}`" v-bind:aria-label="category.title">
+    <RouterLink :to="{ path: '/Products', hash: `#${category.title.toLowerCase()}` }" v-bind:aria-label="category.title">
       <img :src="categoryImage" class="category-img" alt="" />
-    </a>
-    <a :href="`/Products/#${category.title.toLowerCase()}`">
+    </RouterLink>
+    <RouterLink :to="{ path: '/Products', hash: `#${category.title.toLowerCase()}` }">
       <h3>{{ category.title }}</h3>
-    </a>
+    </RouterLink>
     <p>{{ category.categories }}</p>
   </div>
 </template>
   
-  <script>
-  import Breakfast from '../assets/images/categories/Breakfast.webp'
-  import Dinner from '../assets/images/categories/Dinner.webp'
-  import Pastries from '../assets/images/categories/Pastries.webp'
-  import Lunch from '../assets/images/categories/Lunch.webp'
-  import Beverages from '../assets/images/categories/Beverages.webp'
-  import Pizza from '../assets/images/categories/Pizza.webp'
-  import Burger from '../assets/images/categories/Burger.webp'
-  import Sushi from '../assets/images/categories/Sushi.webp'
-  
+<script>
+  import Breakfast from '@/assets/images/categories/Breakfast.webp'
+  import Dinner from '@/assets/images/categories/Dinner.webp'
+  import Pastries from '@/assets/images/categories/Pastries.webp'
+  import Lunch from '@/assets/images/categories/Lunch.webp'
+  import Beverages from '@/assets/images/categories/Beverages.webp'
+  import Pizza from '@/assets/images/categories/Pizza.webp'
+  import Burger from '@/assets/images/categories/Burger.webp'
+  import Sushi from '@/assets/images/categories/Sushi.webp'
+
   export default {
     props: ['category'],
     computed: {
@@ -41,5 +41,5 @@
       }
     }
   }
-  </script>
+</script>
   

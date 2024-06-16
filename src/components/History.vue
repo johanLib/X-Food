@@ -3,6 +3,7 @@
     const historyImg = ref(null), historyText = ref(null);
 
     onMounted(() => {
+        console.log('Component has been mounted!');
         const elementsToObserve = [
             historyImg.value,
             historyText.value
@@ -47,6 +48,7 @@
 </template>
 
 <script>
+await new Promise(res => setTimeout(res, 1500))
 export default {
     name: 'HistoryComponent'
 }

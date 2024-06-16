@@ -25,6 +25,10 @@
     --h2-font: 2.5rem;
     --p-font: 1rem;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -115,7 +119,7 @@ header {
     transform: scale(1.1) translateX(-5px);
     color: var(--main-color);
 }
-#menu-icon {
+.menuicon {
     color: var(--text-color);
     font-size: 30px;
     margin-left: 25px;
@@ -177,7 +181,8 @@ button {
 }
 
 .search,
-.login {
+.login,
+.signup {
   position: fixed;
   left: 0;
   top: 0;
@@ -188,14 +193,13 @@ button {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px); /* For safari */
   padding: 8rem 1.5rem 0;
-  opacity: 0;
-  pointer-events: none;
   transition: opacity .4s;
   overflow: auto;
 }
 
 .search-close,
-.login-close {
+.login-close,
+.signup-close  {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -258,12 +262,12 @@ button {
 }
 
 /*=============== LOGIN ===============*/
-.login-form, 
-.login-group {
+.login-form, .login-group,
+.signup-form, .signup-group {
   display: grid;
 }
 
-.login-form {
+.login-form, .signup-form {
   background-color: hsl(19, 100%, 97%);
   padding: 2rem 1.5rem 2.5rem;
   box-shadow: 0 8px 32px hsla(19, 75%, 15%, .2);
@@ -274,16 +278,16 @@ button {
   transition: transform .4s;
 }
 
-.login-title {
+.login-title, .signup-title {
   font-size: 1.25rem;
   color: hsl(19, 75%, 15%);
 }
 
-.login-group {
+.login-group, .signup-group {
   row-gap: 1rem;
 }
 
-.login-label {
+.login-label, .signup-label {
   display: block;
   text-align: initial;
   color: hsl(19, 75%, 15%);
@@ -291,7 +295,7 @@ button {
   margin-bottom: .25rem;
 }
 
-.login-input {
+.login-input, .signup-input {
   width: 100%;
   background-color: hsl(19, 100%, 97%);
   border: 2px solid hsl(19, 25%, 80%);
@@ -300,7 +304,8 @@ button {
   color: hsl(19, 12%, 40%);
 }
 
-.login-input::placeholder {
+.login-input::placeholder,
+.signup-input::placeholder {
   color: hsl(19, 12%, 40%);
 }
 
@@ -308,8 +313,10 @@ button {
   margin-bottom: .5rem;
 }
 
-.login-signup a {
+.login-signup .signup-btn,
+.login-signup .login-btn{
   color: hsl(19, 75%, 56%);
+  cursor: pointer;
 }
 
 .login-forgot {
@@ -318,7 +325,7 @@ button {
   margin-bottom: 1.25rem;
 }
 
-.login-button {
+.login-button, .signup-button {
   display: inline-block;
   background-color: hsl(19, 75%, 56%);
   width: 100%;
@@ -330,7 +337,7 @@ button {
   transition: box-shadow .4s;
 }
 
-.login-button:hover {
+.login-button:hover, .signup-button:hover {
   box-shadow: 0 4px 24px hsla(19, 75%, 40%, .4);
 }
 
@@ -348,7 +355,8 @@ button {
 /* For medium devices */
 @media screen and (min-width: 576px) {
   .search,
-  .login {
+  .login,
+  .signup {
     padding-top: 10rem;
   }
 
@@ -358,7 +366,8 @@ button {
   }
 
   .search-close,
-  .login-close {
+  .login-close,
+  .signup-close {
     width: max-content;
     top: 5rem;
     left: 0;
@@ -367,7 +376,8 @@ button {
     font-size: 2rem;
   }
 
-  .login-form {
+  .login-form,
+  .signup-form {
     max-width: 400px;
     margin-inline: auto;
   }
@@ -375,7 +385,8 @@ button {
 
 /* For large devices */
 @media screen and (min-width: 1023px) {
-  .login-form {
+  .login-form,
+  .signup-form {
     padding: 3rem 2rem 3.5rem;
   }
 }
@@ -680,11 +691,9 @@ section {
 .menu-content.in-view .row {
     transform: translateY(0);
 }
-.row, .row-product {
+.row, .row-product, .row-product-details {
     display: flex;
     display: -webkit-flex;
-    align-items: center;
-    justify-content: center;
     background: var(--bg-color);
     box-shadow: -1px 15px 26px -4px rgb(161 151 151 / 15%);
     border-radius: 0.7rem;
@@ -694,9 +703,35 @@ section {
 }
 .row {
     transition: transform ease-out 1s;
+    justify-content: center;
+    align-items: center;
 }
 .row-product {
     transition: transform ease-out .5s;
+    justify-content: center;
+    align-items: center;
+}
+.row-product-details {
+    flex-direction: column;
+    justify-content: start;
+}
+.row-product-details h4 {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.row-product-details .desc {
+    font-family: 'Playfair Display', serif;
+}
+.row-product-details .desc,
+.row-product-details .ingr {
+    margin-bottom: 21px;
+}
+.row-product-details .infos {
+    padding: 13px;
+    border: 2px solid #ccc;
+    border-radius: 14px;
 }
 .row:nth-child(1) {
     transform: translateY(300px);
@@ -767,6 +802,15 @@ section {
         transform: translateX(-8px);
     }
 }
+@keyframes pulse {
+    0% {
+      background-position: 50% 0;
+    }
+  
+    100% {
+      background-position: -150% 0;
+    }
+}
 .menu-btnn {
     text-align: center;
     margin-top: 3rem;
@@ -778,7 +822,7 @@ section {
     padding: 0 5.5% 65px;
 }
 .products h3 {
-    margin: 1rem 0 0 2rem;
+    margin: 5rem 0 0 2rem;
     color: var(--main-color);
     font-size: 1.35rem;
 }
@@ -938,6 +982,13 @@ section {
     transform: translateX(-400px);
     transition: transform 1.8s ease;
 }
+.testimonial-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .testimonial-img img {
     width: 100%;
     max-width: 130px;
@@ -950,13 +1001,13 @@ section {
 .testimonial.in-view .testimonial-img img {
     opacity: 1;
 }
-.testimonial-right h4 {
+.testimonial-right h3 {
     font-size: 22x;
     font-weight: 900;
     margin-bottom: 8px;
     font-family: 'Playfair Display', serif;
 }
-.testimonial-right h6 {
+.testimonial-right span {
     color: var(--main-color);
     font-size: 15px;
     font-weight: 800;
@@ -966,6 +1017,27 @@ section {
     font-size: var(--p-font);
     line-height: 32px;
     color: var(--other-color);
+}
+.left-arrow,.right-arrow {
+    position: absolute;
+    font-size: 1.2em;
+    height: 1.8em;
+    width: 1.8em;
+    background-color: #fff;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border: none;
+    color: var(--main-color);
+    box-shadow: 0 0 1rem rgba(1, 17, 39, 0.25);
+    cursor: pointer;
+    border-radius: 50%;
+}
+button.left-arrow {
+    left: -1.1em;
+}
+button.right-arrow {
+    right: -1.1em;
 }
 .newsletter {
     display: grid;
@@ -1085,7 +1157,7 @@ section {
 }
 
 @media (max-width: 1103px) {
-    #menu-icon {
+    .menuicon {
         display: block;
     }
     section {
@@ -1189,7 +1261,7 @@ section {
         --p-font: 0.8rem;
     }
 }
-#darkmode {
+.darkmode {
     font-size: 25px;
     margin-left: 20px;
     cursor: pointer;

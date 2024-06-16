@@ -1,7 +1,7 @@
 <template>
-    <div class="row-product">
+    <div class="row-product" v-if="showProduct">
         <div class="row-img">
-            <img :src="productImage" width="500px" height="500px" :alt="product.name">
+            <img :src="productImage" @click="viewDetails" width="500px" height="500px" :alt="product.name">
             <h4>{{ product.name }}</h4>
             <span>$ {{ product.price.USD }}</span>
             <div class="ratings">
@@ -15,6 +15,20 @@
             <div class="menu-btnn" style="margin-top: 1.3rem;">
                 <button @click="addToCart(product.name, quantity)" class="btn">Add to cart</button>
             </div>
+        </div>
+    </div>
+    <div class="row-product-details" v-else @click="viewDetails">
+        <h4>{{ product.name }}</h4>
+        <p class="desc">{{ product.description }}</p>
+        <p class="ingr"><strong>Ingredients:</strong> {{ product.ingredients }}</p>
+        <div class="infos">
+            <p><i class='bx bxs-hot'></i><strong>Calories:</strong> {{ product.calories }} kcal</p>
+            <p><i class='bx bx-ruler'></i><strong>Serving Size:</strong> {{ product.serving_size }}</p>
+            <p><i class='bx bxs-heart'></i><strong>Allergens:</strong> {{ product.allergens }}</p>
+            <p><i class='bx bxs-time'></i><strong>Preparation Time:</strong> {{ product.preparation_time }}</p>
+            <p><i class='bx bxs-bookmark-star'></i><strong>Category:</strong> {{ product.category }}</p>
+            <p><i class='bx bx-star'></i><strong>Rating:</strong> {{ product.rating }}</p>
+            <p><i class='bx bxs-purchase-tag'></i><strong>Tags:</strong> {{ product.tags.join(', ') }}</p>
         </div>
     </div>
 </template>
@@ -55,7 +69,8 @@ export default {
     props: ['product', 'index', 'addToCart'],
     data() {
         return {
-            quantity: 0
+            quantity: 0,
+            showProduct: true
         }
     },
     computed: {
@@ -97,6 +112,11 @@ export default {
   
         return imageMap[imageName] || '';
       }
+    },
+    methods: {
+        viewDetails() {
+            this.showProduct = !this.showProduct;
+        }
     }
 }
 </script>

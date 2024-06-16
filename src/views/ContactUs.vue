@@ -102,17 +102,30 @@
         <a href="#" class="scrolltop" id="scroll-top">
             <i class='bx bxs-up-arrow scrolltop-icon'></i>
         </a>
-        <ContactFooter loading="auto"/>
+        <Suspense>
+          <template #default>
+              <ContactFooter :logo="logo"/>
+          </template>
+          <template #fallback>
+            <Loading />
+          </template>
+      </Suspense>
     </main>
 </template>
 
 <script>
-import ContactFooter from '@/components/ContactFooter.vue'
+import { defineAsyncComponent } from 'vue';
+const ContactFooter = defineAsyncComponent(() =>
+  import('@/components/ContactFooter.vue')
+);
+import Loading from '@/loaders/Loading.vue'
 
 export default {
     name: 'ContactUs',
+    props: ['logo'],
     components: {
-        ContactFooter
+        ContactFooter,
+        Loading
     }
 }
 </script>
